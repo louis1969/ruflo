@@ -1,0 +1,6 @@
+# Normalise line endings to LF in the repo; check out as-is on all platforms
+* text=auto eol=lf
+
+# Ensure the CLI shebang survives on all platforms
+src/cli.ts text eol=lf
+dist/cli.js text eol=lf

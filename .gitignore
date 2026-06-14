@@ -1,0 +1,27 @@
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Runtime state
+.ruflo/
+
+# Environment — never commit real keys
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.suo
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Pack artifacts
+*.tgz
