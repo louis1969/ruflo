@@ -25,7 +25,7 @@ Ruflo routes tasks across LLM providers, runs multi-agent swarms, calibrates rou
 ### As a CLI tool
 
 ```bash
-npm install -g ruflo
+npm install -g @louis1969/ruflo
 
 # Create a new project
 ruflo init
@@ -43,12 +43,12 @@ ruflo dash
 ### As a library
 
 ```bash
-npm install ruflo
+npm install @louis1969/ruflo
 ```
 
 ```typescript
 import { Router, Swarm, MemoryStore, createMemoryAdapter,
-         loadProviderConfigs, enabledProviders, createAgentRunner } from 'ruflo';
+         loadProviderConfigs, enabledProviders, createAgentRunner } from '@louis1969/ruflo';
 
 const configs = await loadProviderConfigs(process.cwd());
 const active  = enabledProviders(configs);
@@ -236,22 +236,22 @@ All types and runtime values are available from the root import or via deep impo
 
 ```typescript
 // Root — everything
-import { Router, Swarm, PluginManager, EvalHarness } from 'ruflo';
+import { Router, Swarm, PluginManager, EvalHarness } from '@louis1969/ruflo';
 
 // Deep imports (tree-shakeable)
-import { Router }       from 'ruflo/core/router';
-import { Swarm }        from 'ruflo/core/swarm';
-import { MemoryStore }  from 'ruflo/core/memory';
-import { LearningLoop } from 'ruflo/core/learning';
-import { PluginManager, BUILTIN_PLUGINS } from 'ruflo/core/plugins';
-import { EvalHarness }  from 'ruflo/core/eval';
-import { createMcpServer } from 'ruflo/mcp';
+import { Router }       from '@louis1969/ruflo/core/router';
+import { Swarm }        from '@louis1969/ruflo/core/swarm';
+import { MemoryStore }  from '@louis1969/ruflo/core/memory';
+import { LearningLoop } from '@louis1969/ruflo/core/learning';
+import { PluginManager, BUILTIN_PLUGINS } from '@louis1969/ruflo/core/plugins';
+import { EvalHarness }  from '@louis1969/ruflo/core/eval';
+import { createMcpServer } from '@louis1969/ruflo/mcp';
 ```
 
 ### Running a programmatic eval
 
 ```typescript
-import { EvalHarness, renderTerminal, loadProviderConfigs } from 'ruflo';
+import { EvalHarness, renderTerminal, loadProviderConfigs } from '@louis1969/ruflo';
 
 const configs = await loadProviderConfigs(process.cwd());
 const harness = new EvalHarness({ providerConfigs: configs });
@@ -268,7 +268,7 @@ for (const line of renderTerminal(report)) console.log(line);
 ### Writing a custom plugin
 
 ```typescript
-import type { RufloPlugin } from 'ruflo';
+import type { RufloPlugin } from '@louis1969/ruflo';
 
 const weatherPlugin: RufloPlugin = {
   name:    'my-weather-plugin',
@@ -301,7 +301,7 @@ export default weatherPlugin;
 Load it:
 
 ```typescript
-import { PluginManager } from 'ruflo';
+import { PluginManager } from '@louis1969/ruflo';
 
 const plugins = await PluginManager.load({
   plugins:      ['./plugins/weather.js'],   // local path

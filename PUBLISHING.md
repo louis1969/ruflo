@@ -135,9 +135,9 @@ npm view ruflo@0.x.x
 # Install from registry into a temp directory and smoke-test
 cd /tmp && mkdir ruflo-smoke && cd ruflo-smoke
 npm init -y
-npm install ruflo@latest
+npm install @louis1969/ruflo@latest
 node -e "import('ruflo').then(m => console.log('ok:', Object.keys(m).length, 'exports'))"
-npx ruflo --help
+npx @louis1969/ruflo --help
 ```
 
 ---
